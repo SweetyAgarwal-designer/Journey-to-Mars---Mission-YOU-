@@ -3659,6 +3659,267 @@ body.is-motion-calm .observation-window {
   }
 }
 
+@media (max-width: 900px) {
+  .site-shell {
+    display: grid;
+    gap: 1rem;
+    padding: 0.9rem;
+  }
+
+  .cockpit-toolbar {
+    position: relative;
+    left: auto;
+    right: auto;
+    top: auto;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    width: 100%;
+    gap: 0.6rem;
+    transform: none;
+  }
+
+  .utility-button {
+    min-width: 0;
+    min-height: 4.1rem;
+    padding: 0.68rem 0.8rem;
+    align-content: start;
+  }
+
+  .utility-label {
+    font-size: 0.64rem;
+    letter-spacing: 0.16em;
+  }
+
+  .utility-value {
+    font-size: 0.92rem;
+    line-height: 1.2;
+  }
+
+  .status-panel,
+  .cat-console {
+    position: relative;
+    left: auto;
+    right: auto;
+    top: auto;
+    bottom: auto;
+    width: 100%;
+    margin: 0;
+    padding: 0.9rem;
+    border-radius: 1.25rem;
+  }
+
+  .mission {
+    padding: 0 0 2rem;
+  }
+
+  .scene {
+    min-height: auto;
+  }
+
+  .scene-inner {
+    position: static;
+    min-height: auto;
+    gap: 1rem;
+    padding: 0.8rem 0 2.2rem;
+  }
+
+  .scene-boot .scene-inner.scene-boot-layout,
+  .scene-launch .scene-inner,
+  .scene-space .scene-inner,
+  .scene-entry .scene-inner,
+  .scene-mars .scene-inner {
+    grid-template-columns: 1fr;
+  }
+
+  .scene-module,
+  .scene-boot .scene-module,
+  .launch-panels,
+  .space-copy,
+  .landing-console,
+  .scan-panel {
+    min-height: auto;
+  }
+
+  .astronaut-card,
+  .launch-viewport,
+  .space-observatory,
+  .entry-visual,
+  .mars-surface,
+  .terminal-card,
+  .prep-console,
+  .metric-card,
+  .interactive-panel,
+  .isolation-panel,
+  .landing-console,
+  .scan-panel {
+    padding: 0.9rem;
+  }
+
+  .viewport-hud,
+  .terminal-head,
+  .panel-chrome {
+    flex-wrap: wrap;
+    gap: 0.45rem 0.9rem;
+    font-size: 0.64rem;
+    padding-bottom: 0.7rem;
+  }
+
+  .scene-copy,
+  .astronaut-meta {
+    max-width: none;
+  }
+
+  .scene-copy h2,
+  .astronaut-meta h2 {
+    margin-top: 0.45rem;
+    font-size: clamp(1.72rem, 7.5vw, 2.6rem);
+    line-height: 1.02;
+    max-width: 12ch;
+  }
+
+  .scene-description,
+  .brief-readout,
+  .prep-readout,
+  .scan-results,
+  .warning-text,
+  .form-note,
+  .cat-message {
+    font-size: 0.94rem;
+    line-height: 1.6;
+  }
+
+  .terminal-output {
+    min-height: auto;
+    padding: 0.75rem 0;
+    font-size: 0.82rem;
+    line-height: 1.6;
+  }
+
+  .observation-window,
+  .scene-boot .observation-window,
+  .astronaut-stage,
+  .launch-viewport,
+  .entry-visual,
+  .space-observatory,
+  .mars-surface {
+    min-height: clamp(13rem, 34vh, 18rem);
+  }
+
+  .window-readout,
+  .astronaut-signal {
+    gap: 0.5rem;
+    padding: 0.6rem 0.75rem;
+    font-size: 0.62rem;
+    letter-spacing: 0.12em;
+  }
+
+  .telemetry-grid,
+  .landing-grid,
+  .prep-grid,
+  .boot-stack,
+  .launch-panels,
+  .space-copy,
+  .landing-console,
+  .scan-panel {
+    gap: 0.75rem;
+  }
+
+  .metric-head {
+    margin-bottom: 0.65rem;
+  }
+
+  .metric-head strong,
+  .status-row strong {
+    font-size: 0.98rem;
+  }
+
+  .brief-tabs {
+    gap: 0.5rem;
+    margin-top: 0.7rem;
+  }
+
+  .brief-tab {
+    min-height: 2.35rem;
+    padding: 0 0.82rem;
+    font-size: 0.7rem;
+  }
+
+  .prep-card {
+    min-height: auto;
+    padding: 0.82rem 0.9rem;
+  }
+
+  .prep-card-title {
+    font-size: 0.9rem;
+  }
+
+  .prep-card-copy {
+    font-size: 0.86rem;
+    line-height: 1.5;
+  }
+
+  .landing-dial {
+    width: min(100%, 208px);
+  }
+
+  .dial-arm {
+    height: 76px;
+  }
+
+  .status-phase {
+    max-width: none;
+    font-size: clamp(1.12rem, 4vw, 1.45rem);
+    letter-spacing: 0.12em;
+  }
+
+  .status-steps {
+    gap: 0.4rem;
+  }
+
+  .status-step {
+    padding: 0.62rem 0.7rem;
+    gap: 0.7rem;
+  }
+
+  .status-step strong {
+    font-size: 0.8rem;
+  }
+
+  .cat-screen {
+    width: 4.8rem;
+    border-radius: 1rem;
+  }
+
+  .cat-title {
+    font-size: 1.12rem;
+  }
+
+  .cat-message-frame {
+    padding: 0.8rem 0.85rem 0.84rem;
+  }
+
+  .cat-console-meta {
+    flex-wrap: wrap;
+  }
+
+  .cat-waveform,
+  .cat-voice-button {
+    width: 100%;
+  }
+
+  .cat-voice-button {
+    justify-content: center;
+  }
+
+  .input-row {
+    grid-template-columns: 1fr;
+  }
+
+  .diegetic-button {
+    width: 100%;
+  }
+}
+
 @media (max-width: 560px) {
   .site-shell {
     display: grid;
