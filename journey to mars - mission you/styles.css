@@ -3658,3 +3658,163 @@ body.is-motion-calm .observation-window {
     right: -38%;
   }
 }
+
+@media (max-width: 560px) {
+  .site-shell {
+    display: grid;
+    gap: 1rem;
+    padding: 0.9rem;
+  }
+
+  .cockpit-toolbar {
+    position: relative;
+    left: auto;
+    right: auto;
+    top: auto;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    width: 100%;
+    gap: 0.6rem;
+    transform: none;
+  }
+
+  .utility-button {
+    min-width: 0;
+    min-height: 4.4rem;
+    padding: 0.7rem 0.8rem;
+    align-content: start;
+  }
+
+  .utility-button:last-child {
+    grid-column: 1 / -1;
+  }
+
+  .utility-label {
+    font-size: 0.64rem;
+    letter-spacing: 0.16em;
+  }
+
+  .utility-value {
+    font-size: 0.95rem;
+    line-height: 1.2;
+  }
+
+  .status-panel,
+  .cat-console {
+    position: relative;
+    left: auto;
+    right: auto;
+    top: auto;
+    bottom: auto;
+    width: 100%;
+    margin: 0;
+  }
+
+  .status-panel,
+  .cat-console,
+  .mission {
+    order: initial;
+  }
+
+  .mission {
+    padding: 0 0 2.5rem;
+  }
+
+  .panel-chrome,
+  .terminal-head,
+  .viewport-hud {
+    flex-wrap: wrap;
+    gap: 0.45rem 0.9rem;
+  }
+
+  .panel-chrome {
+    font-size: 0.64rem;
+  }
+
+  .status-phase {
+    max-width: none;
+    font-size: clamp(1.2rem, 5.8vw, 1.55rem);
+    letter-spacing: 0.12em;
+  }
+
+  .status-row {
+    display: grid;
+    gap: 0.28rem;
+    align-items: start;
+  }
+
+  .status-row strong {
+    text-align: left;
+  }
+
+  .cat-console-meta {
+    flex-wrap: wrap;
+  }
+
+  .cat-waveform,
+  .cat-voice-button {
+    width: 100%;
+  }
+
+  .cat-voice-button {
+    justify-content: center;
+  }
+
+  .input-row {
+    grid-template-columns: 1fr;
+  }
+
+  .diegetic-button {
+    width: 100%;
+  }
+
+  .hotspot {
+    min-width: 5.5rem;
+    padding: 0.55rem 0.68rem;
+    font-size: 0.68rem;
+    letter-spacing: 0.05em;
+  }
+
+  .hotspot-a {
+    left: 8%;
+    top: 50%;
+  }
+
+  .hotspot-b {
+    left: 37%;
+    top: 36%;
+  }
+
+  .hotspot-c {
+    left: 56%;
+    top: 61%;
+  }
+}
+
+@media (max-width: 400px) {
+  .site-shell {
+    padding-inline: 0.75rem;
+  }
+
+  .cockpit-toolbar {
+    grid-template-columns: 1fr;
+  }
+
+  .utility-button:last-child {
+    grid-column: auto;
+  }
+
+  .status-phase {
+    font-size: clamp(1.08rem, 5.4vw, 1.35rem);
+    letter-spacing: 0.1em;
+  }
+
+  .brief-tab {
+    flex: 1 1 100%;
+  }
+
+  .hotspot {
+    min-width: 5rem;
+    font-size: 0.64rem;
+  }
+}
