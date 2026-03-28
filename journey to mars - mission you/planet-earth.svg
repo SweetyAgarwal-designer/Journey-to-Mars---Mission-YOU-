@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1200" role="img" aria-label="Stylized realistic Earth">
+  <defs>
+    <clipPath id="earthClip">
+      <circle cx="600" cy="600" r="560"/>
+    </clipPath>
+    <radialGradient id="earthOcean" cx="34%" cy="30%" r="74%">
+      <stop offset="0%" stop-color="#77a9ff"/>
+      <stop offset="18%" stop-color="#326bc8"/>
+      <stop offset="46%" stop-color="#10388c"/>
+      <stop offset="78%" stop-color="#081a4d"/>
+      <stop offset="100%" stop-color="#020611"/>
+    </radialGradient>
+    <linearGradient id="earthLand" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#7da36c"/>
+      <stop offset="28%" stop-color="#50773e"/>
+      <stop offset="52%" stop-color="#8a835d"/>
+      <stop offset="74%" stop-color="#8a6444"/>
+      <stop offset="100%" stop-color="#d0be94"/>
+    </linearGradient>
+    <radialGradient id="earthShade" cx="30%" cy="24%" r="84%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.16"/>
+      <stop offset="44%" stop-color="#ffffff" stop-opacity="0"/>
+      <stop offset="76%" stop-color="#04102d" stop-opacity="0.08"/>
+      <stop offset="100%" stop-color="#010206" stop-opacity="0.72"/>
+    </radialGradient>
+    <filter id="earthTexture" x="-20%" y="-20%" width="140%" height="140%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.009 0.016" numOctaves="3" seed="11" result="noise"/>
+      <feColorMatrix in="noise" type="matrix" values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0.2 0"/>
+    </filter>
+    <filter id="cloudBlur" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="9"/>
+    </filter>
+  </defs>
+
+  <g clip-path="url(#earthClip)">
+    <circle cx="600" cy="600" r="560" fill="url(#earthOcean)"/>
+    <circle cx="600" cy="600" r="560" fill="#7fc5ff" opacity="0.16" filter="url(#earthTexture)"/>
+
+    <g fill="url(#earthLand)">
+      <path d="M690 266 C642 248 583 256 534 286 C484 317 456 368 460 429 C462 475 484 520 526 553 C558 579 591 585 604 620 C614 648 602 685 572 710 C541 737 507 780 500 831 C495 867 509 900 535 916 C564 934 599 922 624 895 C649 869 663 830 682 804 C705 773 746 754 785 727 C822 702 846 663 857 621 C871 566 869 514 844 478 C823 447 789 424 781 381 C773 333 750 285 690 266 Z"/>
+      <path d="M744 180 C796 178 846 198 870 236 C886 261 882 294 854 316 C817 344 758 343 725 316 C696 293 696 244 724 214 C731 206 738 189 744 180 Z"/>
+      <path d="M587 612 C611 623 632 640 640 662 C646 679 641 698 627 710 C611 723 589 726 576 714 C564 703 561 685 566 667 C572 647 578 625 587 612 Z"/>
+      <path d="M642 707 C681 713 719 739 735 782 C749 821 744 862 724 899 C706 931 682 967 649 991 C621 1012 590 1012 574 991 C557 969 563 937 579 906 C597 874 606 839 606 806 C605 768 611 736 642 707 Z"/>
+      <path d="M826 860 C851 851 884 857 898 879 C910 899 903 924 882 936 C855 951 816 945 801 920 C790 901 799 874 826 860 Z"/>
+    </g>
+
+    <g fill="#314f2d" opacity="0.28">
+      <path d="M713 320 C670 313 620 329 588 364 C559 395 551 438 561 480 C571 524 603 555 655 568 C709 582 764 571 796 540 C828 509 840 466 830 426 C818 379 773 330 713 320 Z"/>
+      <path d="M633 728 C664 738 688 762 695 792 C703 828 690 870 666 904 C642 939 612 965 589 963 C570 961 564 938 573 908 C582 879 591 850 591 821 C590 783 600 749 633 728 Z"/>
+    </g>
+
+    <g fill="#e8eef4" opacity="0.56">
+      <path d="M678 249 C719 240 781 251 826 283 C858 305 870 333 858 355 C841 385 783 398 721 390 C654 381 599 350 592 314 C587 286 622 262 678 249 Z"/>
+      <path d="M518 774 C532 753 561 742 591 748 C618 755 632 776 626 797 C617 828 577 852 539 850 C510 848 495 828 500 805 C503 792 510 782 518 774 Z"/>
+    </g>
+
+    <g fill="#ffffff" opacity="0.78" filter="url(#cloudBlur)">
+      <path d="M104 408 C153 336 268 309 379 330 C472 347 548 401 560 467 C573 541 512 595 419 606 C326 617 226 580 168 523 C122 478 104 444 104 408 Z"/>
+      <path d="M356 256 C417 241 486 251 542 283 C591 311 621 352 615 386 C608 425 563 447 502 448 C431 449 352 421 309 377 C278 345 278 301 356 256 Z"/>
+      <path d="M666 332 C731 313 822 318 887 354 C933 381 953 420 944 449 C930 491 861 514 779 508 C697 502 619 470 588 424 C564 388 590 355 666 332 Z"/>
+      <path d="M402 894 C471 849 579 839 673 861 C749 879 809 923 804 962 C798 1007 712 1029 610 1019 C508 1008 410 962 373 919 C347 889 353 872 402 894 Z"/>
+      <path d="M736 646 C791 626 854 632 903 660 C946 685 964 719 953 748 C937 788 879 808 809 800 C733 791 664 752 646 709 C635 683 663 663 736 646 Z"/>
+      <path d="M178 650 C230 623 294 624 343 645 C388 664 407 699 398 730 C387 770 333 792 270 785 C207 778 155 744 143 705 C136 683 147 667 178 650 Z"/>
+    </g>
+
+    <g fill="#ffffff" opacity="0.48">
+      <ellipse cx="576" cy="130" rx="254" ry="90"/>
+      <ellipse cx="846" cy="230" rx="84" ry="42"/>
+      <ellipse cx="992" cy="912" rx="78" ry="42"/>
+    </g>
+
+    <circle cx="600" cy="600" r="560" fill="url(#earthShade)"/>
+  </g>
+
+  <circle cx="600" cy="600" r="564" fill="none" stroke="#b8dfff" stroke-opacity="0.82" stroke-width="8"/>
+  <circle cx="600" cy="600" r="575" fill="none" stroke="#74b3ff" stroke-opacity="0.22" stroke-width="24"/>
+</svg>

@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MISSION: YOU | Journey to Mars</title>
+  <meta
+    name="description"
+    content="An immersive single-page Mars mission where every interface element feels like part of the spacecraft."
+  >
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#mission">Skip to mission interface</a>
+
+  <div class="wake-screen" id="wakeScreen">
+    <div class="wake-grid"></div>
+    <div class="wake-vignette"></div>
+    <div class="wake-cockpit" aria-hidden="true">
+      <div class="wake-cockpit-window"></div>
+      <div class="wake-cockpit-stars"></div>
+      <div class="wake-cockpit-earth"></div>
+      <div class="wake-cockpit-strut wake-cockpit-strut-left"></div>
+      <div class="wake-cockpit-strut wake-cockpit-strut-right"></div>
+      <div class="wake-cockpit-strut wake-cockpit-strut-top"></div>
+      <div class="wake-cockpit-console wake-cockpit-console-left"></div>
+      <div class="wake-cockpit-console wake-cockpit-console-center"></div>
+      <div class="wake-cockpit-console wake-cockpit-console-right"></div>
+      <div class="wake-cockpit-panel wake-cockpit-panel-left"></div>
+      <div class="wake-cockpit-panel wake-cockpit-panel-right"></div>
+      <div class="wake-cockpit-glass wake-cockpit-glass-a"></div>
+      <div class="wake-cockpit-glass wake-cockpit-glass-b"></div>
+    </div>
+    <div class="wake-core">
+      <div class="wake-layout">
+        <div class="wake-copy-panel">
+          <p class="wake-label">STANDBY CAPSULE // WAKE PROTOCOL</p>
+          <div class="mission-mark">
+            <span class="mission-mark-line"></span>
+            <span class="mission-mark-text">MARS TRANSIT VEHICLE // SOL 00</span>
+          </div>
+          <h1 class="wake-title">MISSION: YOU</h1>
+          <p class="wake-subtitle">Journey to Mars</p>
+          <p class="wake-intro">
+            A flight deck for departure, transit, and landing: pressure-aware, readable, and framed around the view
+            beyond the hull.
+          </p>
+          <div class="wake-loader" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="wake-lines" aria-hidden="true">
+            <span>CORE MEMORY / THAWING</span>
+            <span>WINDOW SHIELD / CLEAR</span>
+            <span>NAV ARRAY / ALIGNING</span>
+            <span>EMOTIVE AUDIO / ARMED</span>
+          </div>
+          <div class="wake-briefing">
+            <div class="wake-avatar">
+              <svg class="cat-avatar cat-avatar-compact" viewBox="0 0 200 160" aria-hidden="true">
+                <path d="M45 45 68 18l23 28" />
+                <path d="M109 46 132 18l23 28" />
+                <path d="M42 72c0-17 16-31 36-31h44c20 0 36 14 36 31v24c0 27-22 49-49 49H91C64 145 42 123 42 96Z" />
+                <path d="M68 116c16 10 48 10 64 0" />
+                <path d="M99 88v22" />
+                <path d="M71 104 36 96" />
+                <path d="m71 117-35 8" />
+                <path d="M128 104 164 96" />
+                <path d="m128 117 36 8" />
+                <circle cx="76" cy="83" r="8" />
+                <circle cx="122" cy="83" r="8" />
+              </svg>
+            </div>
+            <div class="wake-copy">
+              <p class="wake-ai">CAT.AI EVA-9</p>
+              <p>
+                "Easy now, pilot. I tuned the cockpit to feel like it belongs to a human under pressure, not a
+                loading screen pretending to be one."
+              </p>
+            </div>
+          </div>
+          <div class="wake-actions">
+            <button class="diegetic-button" id="wakeButton" type="button">Wake Systems</button>
+            <p class="wake-caption">Tap anywhere or wait a moment. Ambient ship audio begins after deliberate input.</p>
+          </div>
+        </div>
+
+        <div class="wake-portrait-card scene-card">
+          <div class="viewport-hud">
+            <span>EXPLORER PORTRAIT</span>
+            <span>VISOR FEED / LIVE</span>
+          </div>
+          <div class="observation-window observation-window-departure" data-parallax aria-hidden="true">
+            <div class="window-spacefield"></div>
+            <div class="window-diagnostic-grid"></div>
+            <div class="window-glow"></div>
+            <div class="window-planet earth-view earth-view-large"></div>
+            <div class="window-planet mars-view mars-view-small"></div>
+            <div class="window-ship-edge ship-edge-left"></div>
+            <div class="window-ship-edge ship-edge-right"></div>
+            <div class="window-ship-edge ship-edge-bottom"></div>
+            <div class="window-canopy canopy-primary"></div>
+            <div class="window-canopy canopy-secondary"></div>
+            <div class="window-reflection reflection-primary"></div>
+            <div class="window-reflection reflection-secondary"></div>
+            <div class="window-reticle window-reticle-departure"></div>
+            <div class="window-readout">
+              <span>EARTH LIMB / CLEAR</span>
+              <span>MARS VECTOR / LOCKED</span>
+            </div>
+          </div>
+          <div class="wake-portrait-copy">
+            <p class="wake-ai">EXTERIOR FEED</p>
+            <p>
+              A live view past the hull: Earth still dominant, Mars only a hard red point, and just enough canopy
+              reflection to make the glass feel inhabited.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="ambient ambient-nebula" aria-hidden="true"></div>
+  <div class="ambient ambient-stars" aria-hidden="true"></div>
+  <div class="ambient ambient-grid" aria-hidden="true"></div>
+  <div class="ambient ambient-noise" aria-hidden="true"></div>
+
+  <div class="site-shell" id="siteShell" aria-hidden="true">
+    <div class="cockpit-toolbar" aria-label="Immersion and accessibility controls">
+      <button class="utility-button" id="audioToggle" type="button" aria-pressed="false">
+        <span class="utility-label">Soundfield</span>
+        <strong class="utility-value" id="audioToggleText">Standby</strong>
+      </button>
+      <button class="utility-button" id="textBoostToggle" type="button" aria-pressed="false">
+        <span class="utility-label">Text Boost</span>
+        <strong class="utility-value" id="textBoostToggleText">Off</strong>
+      </button>
+      <button class="utility-button" id="motionToggle" type="button" aria-pressed="false">
+        <span class="utility-label">Motion Calm</span>
+        <strong class="utility-value" id="motionToggleText">Off</strong>
+      </button>
+    </div>
+
+    <p class="sr-only" id="missionAnnouncements" aria-live="polite"></p>
+
+    <aside class="status-panel" id="statusPanel" aria-label="Mission status">
+      <div class="panel-chrome">
+        <span>SYSTEM MAP</span>
+        <span>MISSION FEED</span>
+      </div>
+      <p class="status-kicker">Mission Status</p>
+      <h2 class="status-phase" id="statusPhase">Standby</h2>
+      <div class="status-row">
+        <span>Pilot</span>
+        <strong id="statusName">Awaiting ID</strong>
+      </div>
+      <div class="status-row">
+        <span>Vector</span>
+        <strong id="statusDistance">Wake sequence pending</strong>
+      </div>
+      <div class="status-row">
+        <span>Objective</span>
+        <strong id="statusObjective">Bring the ship online</strong>
+      </div>
+      <div class="status-row">
+        <span>Ship Mood</span>
+        <strong id="statusMood">Dormant</strong>
+      </div>
+      <div class="status-steps" id="statusSteps">
+        <button class="status-step is-active" type="button" data-scene="scene-boot" aria-current="step">
+          <span>01</span>
+          <strong>Authorization</strong>
+        </button>
+        <button class="status-step" type="button" data-scene="scene-launch">
+          <span>02</span>
+          <strong>Launch</strong>
+        </button>
+        <button class="status-step" type="button" data-scene="scene-space">
+          <span>03</span>
+          <strong>Cruise</strong>
+        </button>
+        <button class="status-step" type="button" data-scene="scene-entry">
+          <span>04</span>
+          <strong>Entry</strong>
+        </button>
+        <button class="status-step" type="button" data-scene="scene-mars">
+          <span>05</span>
+          <strong>Surface</strong>
+        </button>
+      </div>
+    </aside>
+
+    <aside class="cat-console" id="catConsole" aria-live="polite">
+      <div class="panel-chrome">
+        <span>CAT.AI LINK</span>
+        <span>EMPATHIC CORE</span>
+      </div>
+      <div class="cat-console-top">
+        <div class="cat-screen">
+          <svg class="cat-avatar" viewBox="0 0 200 160" aria-hidden="true">
+            <path d="M45 45 68 18l23 28" />
+            <path d="M109 46 132 18l23 28" />
+            <path d="M42 72c0-17 16-31 36-31h44c20 0 36 14 36 31v24c0 27-22 49-49 49H91C64 145 42 123 42 96Z" />
+            <path d="M68 116c16 10 48 10 64 0" />
+            <path d="M99 88v22" />
+            <path d="M71 104 36 96" />
+            <path d="m71 117-35 8" />
+            <path d="M128 104 164 96" />
+            <path d="m128 117 36 8" />
+            <circle cx="76" cy="83" r="8" />
+            <circle cx="122" cy="83" r="8" />
+          </svg>
+          <div class="cat-screen-grid" aria-hidden="true"></div>
+        </div>
+        <div class="cat-title-wrap">
+          <p class="cat-kicker">CAT.AI EVA-9</p>
+          <h2 class="cat-title">Companion Channel</h2>
+        </div>
+      </div>
+      <div class="cat-console-meta">
+        <div class="cat-waveform" id="catWaveform" aria-hidden="true">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <button class="cat-voice-button" id="catVoiceToggle" type="button" aria-pressed="true">
+          <span class="cat-voice-label">Voice</span>
+          <strong class="cat-voice-value" id="catVoiceToggleText">On</strong>
+        </button>
+      </div>
+      <div class="cat-message-frame">
+        <p class="cat-message" id="catMessage">
+          Systems are sleeping. Wake the ship and I'll keep the interface calm, legible, and a little bit human.
+        </p>
+      </div>
+    </aside>
+
+    <main class="mission" id="mission">
+      <section
+        class="scene scene-boot is-active"
+        id="scene-boot"
+        data-phase="Authorization"
+        data-status-phase="AUTH NODE"
+        data-distance="Bridge systems warming"
+        data-objective="Confirm pilot identity and unlock the cockpit"
+        data-mood="Curious"
+        data-cat="State your designation and I'll open the bridge."
+      >
+        <div class="scene-inner scene-boot-layout">
+          <div class="astronaut-card scene-card scene-module scene-module-visual">
+            <div class="viewport-hud">
+              <span>FORWARD VISOR</span>
+              <span>AUTH WINDOW / MARS VECTOR</span>
+            </div>
+            <div class="observation-window observation-window-approach" id="astronautStage" data-parallax aria-hidden="true">
+              <div class="window-spacefield"></div>
+              <div class="window-diagnostic-grid"></div>
+              <div class="window-glow"></div>
+              <div class="window-planet mars-view mars-view-large"></div>
+              <div class="window-planet earth-view earth-view-small"></div>
+              <div class="window-ship-edge ship-edge-left"></div>
+              <div class="window-ship-edge ship-edge-right"></div>
+              <div class="window-ship-edge ship-edge-bottom"></div>
+              <div class="window-ship-edge ship-edge-console"></div>
+              <div class="window-canopy canopy-primary"></div>
+              <div class="window-canopy canopy-secondary"></div>
+              <div class="window-reflection reflection-primary"></div>
+              <div class="window-reflection reflection-secondary"></div>
+              <div class="window-reflection reflection-tertiary"></div>
+              <div class="window-reticle window-reticle-approach"></div>
+              <div class="window-vector-line"></div>
+              <div class="window-readout">
+                <span>HUD LOCK / OPEN</span>
+                <span>MARS VECTOR / HELD</span>
+              </div>
+            </div>
+            <div class="astronaut-meta">
+              <p class="scene-index">01 // Bridge Authorization View</p>
+              <h2>Forward glass calibrated. Identity gate still closed.</h2>
+              <p class="scene-description">
+                Departure framing is live, approach vector is held, and the bridge is waiting for one thing only:
+                your call sign to release the cockpit.
+              </p>
+              <div class="brief-tabs" role="group" aria-label="Astronaut briefing views">
+                <button class="brief-tab is-active" type="button" data-brief="profile" aria-pressed="true">Departure</button>
+                <button class="brief-tab" type="button" data-brief="suit" aria-pressed="false">Cabin</button>
+                <button class="brief-tab" type="button" data-brief="mission" aria-pressed="false">Approach</button>
+              </div>
+              <div class="brief-readout" id="briefReadout" aria-live="polite">
+                Departure framing keeps Earth heavy in the glass and Mars small but undeniable, so the cockpit feels
+                like a vessel in transit rather than a decorative scene.
+              </div>
+            </div>
+          </div>
+
+          <div class="boot-stack scene-module scene-module-console">
+            <div class="terminal-card scene-card">
+              <div class="terminal-head">
+                <span>BOOT CONSOLE</span>
+                <span>AUTH NODE A1</span>
+              </div>
+              <div class="terminal-output" id="terminalOutput" aria-live="polite"></div>
+              <form class="pilot-form" id="pilotForm">
+                <label class="field-label" for="pilotName">Pilot call sign</label>
+                <div class="input-row">
+                  <input
+                    class="diegetic-input"
+                    id="pilotName"
+                    name="pilotName"
+                    type="text"
+                    maxlength="20"
+                    placeholder="Enter your call sign"
+                    autocomplete="off"
+                    aria-describedby="authFeedback"
+                  >
+                  <button class="diegetic-button" id="authorizeButton" type="submit">Unlock Bridge</button>
+                </div>
+                <p class="form-note" id="authFeedback" role="status">Awaiting identity handshake.</p>
+              </form>
+            </div>
+
+            <div class="prep-console scene-card">
+              <div class="terminal-head">
+                <span>BRIDGE SUBSYSTEMS</span>
+                <span>TOUCH + KEYBOARD READY</span>
+              </div>
+              <div class="prep-grid">
+                <button
+                  class="prep-card"
+                  type="button"
+                  data-title="Glass Tuning"
+                  data-copy="Contrast, reflection control, and solar glare compensation tuned for direct exterior viewing."
+                  data-message="Glass tuning loaded. The forward view now carries less glare and stronger horizon separation."
+                  aria-pressed="false"
+                >
+                  <span class="prep-card-title">Glass Tuning</span>
+                  <span class="prep-card-copy">Stabilize contrast, glare, and horizon readability.</span>
+                </button>
+                <button
+                  class="prep-card"
+                  type="button"
+                  data-title="Bio Telemetry"
+                  data-copy="Vitals stay visible at peripheral weight, never louder than flight-critical information."
+                  data-message="Bio telemetry synced. Human-state cues remain present without competing with navigation."
+                  aria-pressed="false"
+                >
+                  <span class="prep-card-title">Bio Telemetry</span>
+                  <span class="prep-card-copy">Surface pulse and stress without turning the screen into noise.</span>
+                </button>
+                <button
+                  class="prep-card"
+                  type="button"
+                  data-title="Approach Stack"
+                  data-copy="Arrival prompts are staged by phase so the cockpit only asks for what matters now."
+                  data-message="Approach stack staged. Mars arrival will build from vector to corridor to touchdown."
+                  aria-pressed="false"
+                >
+                  <span class="prep-card-title">Approach Stack</span>
+                  <span class="prep-card-copy">Phase the Mars arrival logic into clean, readable steps.</span>
+                </button>
+              </div>
+              <p class="prep-readout" id="prepReadout" aria-live="polite">
+                Select a subsystem to stage the bridge before release.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="scene scene-launch"
+        id="scene-launch"
+        data-phase="Launch Sequence"
+        data-distance="Ascending through 390 km"
+        data-objective="Escape Earth and stabilize ascent"
+        data-mood="Focused"
+        data-cat="All clamps green. Breathe with the engine."
+      >
+        <div class="scene-inner">
+          <div class="launch-viewport scene-card scene-module scene-module-visual">
+            <div class="viewport-hud">
+              <span>ASCENT GLASS</span>
+              <span>EARTH LOCK</span>
+            </div>
+            <div class="earth"></div>
+            <div class="orbit-rings" aria-hidden="true"></div>
+            <div class="launch-stars" aria-hidden="true"></div>
+            <div class="engine-flare" aria-hidden="true"></div>
+            <div class="cockpit-reticle" aria-hidden="true"></div>
+          </div>
+
+          <div class="launch-panels scene-module scene-module-console">
+            <div class="scene-copy">
+              <p class="scene-index">02 // Launch Sequence</p>
+              <h2>Earth falls away in trembling blue.</h2>
+              <p class="scene-description">
+                The hull groans, the cabin glass brightens, and every meter of altitude feels earned. Scroll to carry
+                the ship up through the atmosphere while the controls stay anchored and readable.
+              </p>
+            </div>
+
+            <div class="telemetry-grid">
+              <div class="metric-card scene-card">
+                <div class="metric-head">
+                  <span>Fuel</span>
+                  <strong id="fuelValue">100%</strong>
+                </div>
+                <div class="metric-track"><span class="metric-fill" id="fuelFill"></span></div>
+              </div>
+              <div class="metric-card scene-card">
+                <div class="metric-head">
+                  <span>Thrust</span>
+                  <strong id="thrustValue">35%</strong>
+                </div>
+                <div class="metric-track"><span class="metric-fill is-cool" id="thrustFill"></span></div>
+              </div>
+              <div class="metric-card scene-card">
+                <div class="metric-head">
+                  <span>Altitude</span>
+                  <strong id="altitudeValue">0 km</strong>
+                </div>
+                <div class="metric-track"><span class="metric-fill is-fine" id="altitudeFill"></span></div>
+              </div>
+
+              <button
+                class="interactive-panel scene-card"
+                type="button"
+                aria-pressed="false"
+                data-message="Vector trim balanced. The ship can feel restless without becoming unreadable."
+              >
+                <span class="panel-title">Vector Trim</span>
+                <span class="panel-meta">Tap / focus</span>
+                <span class="panel-reveal">Roll damping locked. Cabin sway compensation online.</span>
+              </button>
+              <button
+                class="interactive-panel scene-card"
+                type="button"
+                aria-pressed="false"
+                data-message="Crew pulse elevated, but still inside the range where focus sharpens rather than narrows."
+              >
+                <span class="panel-title">Crew Pulse</span>
+                <span class="panel-meta">Tap / focus</span>
+                <span class="panel-reveal">Adrenal response elevated. Breathing pattern still mission-safe.</span>
+              </button>
+              <button
+                class="interactive-panel scene-card"
+                type="button"
+                aria-pressed="false"
+                data-message="Window shielding adjusted. Brightness stays dramatic without losing legibility."
+              >
+                <span class="panel-title">Window Shield</span>
+                <span class="panel-meta">Tap / focus</span>
+                <span class="panel-reveal">Solar glare compensated. Earth visual remains stable.</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="scene scene-space"
+        id="scene-space"
+        data-phase="Deep Space Isolation"
+        data-distance="Cruising through 128M km"
+        data-objective="Hold course through the long quiet"
+        data-mood="Lonely"
+        data-cat="Cruise is the part no one prepares you for."
+      >
+        <div class="scene-inner">
+          <div class="space-observatory scene-card scene-module scene-module-visual">
+            <div class="viewport-hud">
+              <span>DEEP FIELD</span>
+              <span>SIGNAL HUM / LOW</span>
+            </div>
+            <div class="space-stars"></div>
+            <div class="distant-mars"></div>
+            <div class="drift-grid"></div>
+          </div>
+
+          <div class="space-copy scene-module scene-module-console">
+            <p class="scene-index">03 // Deep Space Isolation</p>
+            <h2>The ship gets quieter than your thoughts.</h2>
+            <p class="scene-description">
+              In the middle stretch, the mission becomes a conversation between drifting light and whatever you tell
+              yourself to keep going. Stay still for a few seconds and EVA-9 notices the silence.
+            </p>
+            <div class="isolation-panel scene-card">
+              <div class="heartbeat">
+                <span></span>
+              </div>
+              <p id="idlePrompt">
+                Minimal telemetry only. Stay still long enough and EVA-9 notices the silence changing shape.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="scene scene-entry"
+        id="scene-entry"
+        data-phase="Mars Entry"
+        data-distance="Approach corridor at 11 km"
+        data-objective="Hold the craft inside the safe descent angle"
+        data-mood="Alert"
+        data-cat="Keep the angle calm. Mars punishes hesitation."
+      >
+        <div class="scene-inner">
+          <div class="entry-visual scene-card scene-module scene-module-visual">
+            <div class="viewport-hud">
+              <span>ENTRY GLASS</span>
+              <span>THERMAL LOAD</span>
+            </div>
+            <div class="mars-glow"></div>
+            <div class="mars-planet"></div>
+            <div class="heat-ripple"></div>
+            <div class="entry-streaks"></div>
+          </div>
+
+          <div class="landing-console scene-card scene-module scene-module-console" id="landingConsole">
+            <div class="scene-copy">
+              <p class="scene-index">04 // Entry &amp; Landing</p>
+              <h2>Mars fills the glass, red and unforgiving.</h2>
+              <p class="scene-description">
+                Drag the descent guide to keep your entry corridor clean. Too shallow and you skip. Too steep and the
+                hull starts pleading with you.
+              </p>
+            </div>
+
+            <div class="landing-grid">
+              <div
+                class="landing-dial"
+                id="landingDial"
+                aria-label="Landing angle control"
+                role="slider"
+                aria-valuemin="-35"
+                aria-valuemax="35"
+                aria-valuenow="0"
+                aria-valuetext="0 degrees, unsteady stability"
+                tabindex="0"
+              >
+                <div class="dial-arc"></div>
+                <div class="dial-safe-zone"></div>
+                <div class="dial-markers"></div>
+                <div class="dial-arm" id="dialArm">
+                  <span class="dial-handle"></span>
+                </div>
+                <div class="dial-core"></div>
+              </div>
+
+              <div class="landing-readout">
+                <div class="status-row">
+                  <span>Angle</span>
+                  <strong id="angleValue">0&deg;</strong>
+                </div>
+                <div class="status-row">
+                  <span>Stability</span>
+                  <strong id="stabilityValue">Balanced</strong>
+                </div>
+                <div class="status-row">
+                  <span>Thermal Load</span>
+                  <strong id="thermalValue">64%</strong>
+                </div>
+                <p class="warning-text" id="entryWarning">Drag the dial to settle inside the narrow safe corridor.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="scene scene-mars"
+        id="scene-mars"
+        data-phase="Mars Exploration"
+        data-distance="Surface contact confirmed"
+        data-objective="Scan the landing zone and trace the final signal"
+        data-mood="Reflective"
+        data-cat="Surface link stable. Let's see what the silence kept."
+      >
+        <div class="scene-inner">
+          <div class="mars-surface scene-card scene-module scene-module-visual" id="marsSurface">
+            <div class="surface-layer surface-back"></div>
+            <div class="surface-layer surface-mid"></div>
+            <div class="surface-layer surface-front"></div>
+            <div class="scan-sweep"></div>
+            <button
+              class="hotspot hotspot-a"
+              type="button"
+              data-title="Basalt Spire"
+              data-copy="A black rock needle carries magnetic scarring from storms older than the mission itself."
+            >
+              <span>Basalt Spire</span>
+            </button>
+            <button
+              class="hotspot hotspot-b"
+              type="button"
+              data-title="Dust Hollow"
+              data-copy="Fine regolith is pooled here in impossible stillness, as though the wind paused to listen."
+            >
+              <span>Dust Hollow</span>
+            </button>
+            <button
+              class="hotspot hotspot-c"
+              type="button"
+              data-title="Signal Relic"
+              data-copy="A buried beacon answers with only one imprint: human heartbeat cadence, mirrored back after a long delay."
+            >
+              <span>Signal Relic</span>
+            </button>
+            <div class="final-beacon" id="finalBeacon" aria-hidden="true"></div>
+          </div>
+
+          <div class="scan-panel scene-card scene-module scene-module-console">
+            <div class="scene-copy">
+              <p class="scene-index">05 // Mars Exploration</p>
+              <h2>Mars doesn't greet you. It receives you.</h2>
+              <p class="scene-description">
+                The red plain is empty in a way that feels almost sacred. Tap the scan points and let the planet
+                answer in fragments.
+              </p>
+            </div>
+
+            <div class="scan-results" id="scanResults" aria-live="polite">
+              Select a surface marker to begin the scan.
+            </div>
+            <p class="final-note" id="finalNote">
+              When the last signal is found, the ship lets the moment stay quiet for a breath longer than comfort.
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
